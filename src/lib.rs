@@ -10,14 +10,14 @@
 //!
 //! ## Quick start
 //! ```no_run
-//! use patlite_udp::{Color, Flash, build_command, send_pns_command};
+//! use patlite_udp::{Color, Flash, Buzzer, build_command, send_pns_command};
 //!
 //! # fn main() -> std::io::Result<()> {
 //! let cmd = build_command(
 //!     Color::Green, Color::Amber, Color::Off, Color::White, Color::Red,
-//!     Flash::On, 0x00
+//!     Flash::On, Buzzer::Off
 //! );
-//! send_pns_command("192.168.0.60", 10000, &cmd)?;
+//! send_pns_command("192.168.1.2", 10000, &cmd)?;
 //! # Ok(()) }
 //! ```
 //!
@@ -25,8 +25,8 @@
 //! ```no_run
 //! # #[cfg(feature = "env")]
 //! # fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
-//! use patlite_udp::{Color, Flash, set_stack_light};
-//! set_stack_light(Color::Red, Color::Off, Color::Off, Color::Off, Color::Off, Flash::Off, 0x00)?;
+//! use patlite_udp::{Color, Flash, Buzzer, set_stack_light};
+//! set_stack_light(Color::Red, Color::Off, Color::Off, Color::Off, Color::Off, Flash::Off, Buzzer::Off)?;
 //! # Ok(()) }
 //! # #[cfg(not(feature = "env"))]
 //! # fn main() {}

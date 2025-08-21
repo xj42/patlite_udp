@@ -11,7 +11,7 @@ fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
         buzzer: Buzzer::Off,
     };
     let cfg: PatliteConfig = PatliteConfig {
-        ip: "192.168.0.60".to_string(),
+        ip: "192.168.1.2".to_string(),
         port: 10000,
     };
     _ = send_pns(&cfg, state);
