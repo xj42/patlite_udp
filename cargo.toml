@@ -1,0 +1,23 @@
+[package]
+name = "patlite-udp"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "Tiny, std-only UDP client for PATLITE LA6-POE."
+repository = "https://github/xj42/patlite_udp"
+homepage = "https://github/xj42/patlite_udp"
+keywords = ["patlite", "udp", "iot", "hardware", "signal"]
+categories = ["hardware-support", "network-programming"]
+readme = "README.md"
+
+[features]
+default = ["env"]
+# Enable loading IP/port from environment variables.
+env = []
+
+[lib]
+name = "patlite_udp"
+path = "src/lib.rs"
+
+[package.metadata.docs.rs]
+features = ["env"]
