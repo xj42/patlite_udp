@@ -7,10 +7,10 @@ pub struct PatliteConfig {
     pub port: u16,
 }
 
-/// Color codes per device spec.
+/// La6Colour codes per device spec.
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, Eq, PartialEq)]
-pub enum Color {
+pub enum La6Colour {
     Off = 0x00,
     Red = 0x01,
     Amber = 0x02,
@@ -23,7 +23,7 @@ pub enum Color {
     White = 0x09,
 }
 
-impl fmt::Display for Color {
+impl fmt::Display for La6Colour {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         write!(f, "{:?}", self)
     }
@@ -58,11 +58,11 @@ pub enum Buzzer {
 
 #[derive(Copy, Clone, Debug, Eq, PartialEq)]
 pub struct PatliteState {
-    pub tier1: Color,
-    pub tier2: Color,
-    pub tier3: Color,
-    pub tier4: Color,
-    pub tier5: Color,
+    pub tier1: La6Colour,
+    pub tier2: La6Colour,
+    pub tier3: La6Colour,
+    pub tier4: La6Colour,
+    pub tier5: La6Colour,
     pub flash: Flash,
     pub buzzer: Buzzer,
 }
